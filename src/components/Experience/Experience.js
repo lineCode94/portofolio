@@ -6,9 +6,17 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import { FileText } from "lucide-react";
 import { faBriefcase, faGraduationCap } from "@fortawesome/free-solid-svg-icons";
 import { faReact, faVuejs, faSass } from "@fortawesome/free-brands-svg-icons";
-
+import cvFile from "../../assets/Mohamed_Zakaria_CV.pdf";
 const Experience = () => {
-  const downloadUrl = process.env.PUBLIC_URL + "/assets/Mohamed_Zakaria_CV.pdf";
+  const handleDownload = (e) => {
+    e.preventDefault();
+    const link = document.createElement("a");
+    link.href = cvFile;
+    link.download = "Muhammad-Zakaria-CV.pdf";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+  };
 
   return (
     <div className="experience-page">
@@ -19,8 +27,8 @@ const Experience = () => {
         </div>
         <a
           className="download-cv-button"
-          href={downloadUrl}
-          download="Mohamed_Zakaria_CV.pdf"
+          onClick={handleDownload}
+          style={{ cursor: "pointer" }}
           aria-label="Download CV"
         >
           <FileText size={18} />

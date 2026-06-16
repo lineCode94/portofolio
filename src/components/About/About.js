@@ -7,12 +7,13 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import Loader from "react-loaders";
 
 import {
-  faCss3,
+  faGithub  ,
   faGitAlt,
   faHtml5,
   faJsSquare,
   faReact,
   faSass,
+  faTailwindCss
 } from "@fortawesome/free-brands-svg-icons";
 
 const About = () => {
@@ -65,10 +66,10 @@ const About = () => {
               <FontAwesomeIcon icon={faReact} color="#5ED4F4" />
             </div>
             <div className="face2">
-              <FontAwesomeIcon icon={faHtml5} color="#F06529" />
+              <FontAwesomeIcon icon={faTailwindCss} color="#F06529" />
             </div>
             <div className="face3">
-              <FontAwesomeIcon icon={faCss3} color="#28A4D9" />
+              <FontAwesomeIcon icon={faGithub} color="#333" />
             </div>
             <div className="face4">
               <FontAwesomeIcon icon={faJsSquare} color="#EFD81D" />

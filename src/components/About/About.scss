@@ -100,7 +100,7 @@
       width: 200px;
       height: 200px;
       border: 1px solid rgba(255, 255, 255, 0.1);
-      background-color: rgba(3, 0, 20, 0.6);
+      background-color:var(--cube-bg);
       backdrop-filter: blur(8px);
       -webkit-backdrop-filter: blur(8px);
       text-align: center;

@@ -7,6 +7,7 @@ import { Link } from "react-router-dom";
 import { Download, ArrowRight, Mail } from "lucide-react";
 import Animated from "../AnimatedLatters/Animated";
 import { motion } from "framer-motion";
+import cvFile from "../../assets/Mohamed_Zakaria_CV.pdf";
 
 const Home = () => {
   const { t } = useTranslation();
@@ -69,13 +70,11 @@ const Home = () => {
     ".",
   ];
 
-  const downloadUrl = process.env.PUBLIC_URL + "/assets/Mohamed_Zakaria_CV.pdf";
-
   const handleDownloadCV = (e) => {
     e.preventDefault();
     const link = document.createElement("a");
-    link.href = downloadUrl;
-    link.download = "Mohamed_Zakaria_CV.pdf";
+    link.href = cvFile;
+    link.download = "Muhammad-Zakaria-CV.pdf";
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
