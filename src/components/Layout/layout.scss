@@ -1,0 +1,21 @@
+.App {
+  display: flex;
+  min-height: 100vh;
+  position: relative;
+  flex-direction: column;
+}
+
+.main-content {
+  flex: 1;
+  margin-top: 72px; /* For TopBar */
+  min-height: calc(100vh - 72px);
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: auto;
+}
+
+@media screen and (max-width: 900px) {
+  .main-content {
+    padding-bottom: 70px; /* space for mobile bottom nav */
+  }
+}

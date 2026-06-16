@@ -1,0 +1,44 @@
+.language-switcher {
+  display: flex;
+  align-items: center;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 999px;
+  padding: 4px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative;
+}
+
+.language-switcher__option {
+  position: relative;
+  background: transparent;
+  border: none;
+  color: var(--text-secondary);
+  font-family: var(--font-display);
+  font-weight: 600;
+  font-size: 0.8rem;
+  padding: 6px 14px;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: color 0.3s ease;
+  z-index: 1;
+
+  &:hover {
+    color: var(--text-primary);
+  }
+
+  &.active {
+    color: var(--bg-main);
+  }
+}
+
+.language-switcher__option.active::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--gradient-primary);
+  border-radius: 999px;
+  z-index: -1;
+  box-shadow: 0 4px 12px var(--glow-purple);
+  /* Use framer-motion equivalent or native CSS for sliding if we had a shared background, but this simple approach is robust */
+}

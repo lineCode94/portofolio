@@ -1,0 +1,44 @@
+$sec-color: #115173;
+
+.text-animate {
+  display: inline-block;
+  opacity: 0;
+  min-width: 10px;
+
+  animation-name: bounceIn;
+  animation-duration: 0.8s;
+  animation-fill-mode: forwards;
+}
+
+.text-animate-hover {
+  display: inline-block;
+  opacity: 1;
+  min-width: 10px;
+
+  &:hover {
+    color: var(--text-primary);
+    animation: rubberBand 0.8s;
+  }
+}
+
+// Delay sequentially for each letter
+@for $i from 1 through 100 {
+  .text-animate._#{$i} {
+    animation-delay: #{$i * 0.05}s;
+  }
+}
+.highlight-letter {
+  color: #f59e0b;
+  text-shadow: 0 0 10px rgba(245, 158, 11, 0.6);
+  transform: translateY(-1px);
+}
+
+.m-letter {
+  color: var(--accent-purple);
+  filter: drop-shadow(0 0 8px rgba(139, 92, 246, 0.5));
+}
+
+.z-letter {
+  color: var(--accent-cyan);
+  filter: drop-shadow(0 0 8px rgba(6, 182, 212, 0.5));
+}

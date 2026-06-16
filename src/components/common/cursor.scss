@@ -1,0 +1,41 @@
+/* Cursor Styles */
+body {
+  /* We keep default cursor on body to fallback gracefully but hide it when custom cursor is active via CSS if we wanted to. 
+     Usually it's better to keep cursor: auto for accessibility and just overlay the custom cursor. 
+     We will hide cursor for links if the ring is there */
+}
+
+.custom-cursor-dot {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 8px;
+  height: 8px;
+  background-color: var(--accent-cyan);
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9999;
+  box-shadow: 0 0 10px var(--accent-cyan);
+}
+
+.custom-cursor-ring {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  background-color: transparent;
+  border-radius: 50%;
+  pointer-events: none;
+  z-index: 9998;
+  backdrop-filter: blur(1px);
+}
+
+/* Hide custom cursor on mobile */
+@media (pointer: coarse), (max-width: 767px) {
+  .custom-cursor-dot,
+  .custom-cursor-ring {
+    display: none !important;
+  }
+}

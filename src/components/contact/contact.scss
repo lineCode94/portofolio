@@ -1,0 +1,312 @@
+.contact-page {
+  .text-zone {
+    position: absolute;
+    left: 10%;
+    top: 25%;
+    transform: translateY(-50%);
+    width: 40%;
+    
+     .text-animate-hover {
+      &:hover {
+        color: var(--text-primary)!important;
+        text-shadow: 0 0 10px var(--glow-purple);
+      }
+    }
+  }
+
+  h1 {
+    font-size: 53px;
+    font-family: var(--font-display);
+    color: var(--text-primary);
+    font-weight: 700;
+    margin-top: 0;
+    position: relative;
+    margin-bottom: 40px;
+    left: -10px;
+    letter-spacing: -1px;
+
+    &:before {
+      content: "<h1>";
+      font-family: "La Belle Aurore", cursive;
+   color:var(--text-muted);
+   
+      font-size: 16px;
+      position: absolute;
+      margin-top: -15px;
+      left: -10px;
+      line-height: 16px;
+    }
+
+    &:after {
+      content: "<h1/>";
+      font-family: "La Belle Aurore", cursive;
+      color: var(--text-muted);
+      font-size: 16px;
+      line-height: 16px;
+      position: absolute;
+      left: -30px;
+      bottom: -22px;
+      margin-left: 20px;
+    }
+  }
+
+  p {
+    font-size: 15px;
+    line-height: 1.6;
+    color: var(--text-secondary);
+    font-family: var(--font-sans);
+    font-weight: 400;
+    max-width: fit-content;
+    opacity: 0;
+    animation: fadeInUp 1s 1s;
+    animation-fill-mode: forwards;
+  }
+}
+
+.contact-form {
+  width: 100%;
+  position: absolute;
+  margin-top: 20px;
+  
+  ul {
+    padding: 0;
+    margin: 0;
+
+    li {
+      padding: 0;
+      margin: 0;
+      list-style: none;
+      margin-bottom: 15px;
+      opacity: 0;
+      overflow: hidden;
+      display: block;
+      clear: both;
+      position: relative;
+      animation: fadeInUp 1s 1.2s;
+      animation-fill-mode: forwards;
+    }
+
+    li.half {
+      width: 49%;
+      margin-left: 2%;
+      float: left;
+      clear: none;
+
+      &:first-child {
+        margin-left: 0;
+      }
+    }
+  }
+
+  input[type="text"],
+  input[type="email"],
+  textarea {
+    width: 100%;
+    border: 1px solid var(--border-surface);
+    background: rgba(255, 255, 255, 0.02);
+    border-radius: 8px;
+    font-size: 15px;
+    color: var(--text-primary);
+    padding: 15px 20px;
+    box-sizing: border-box;
+    font-family: var(--font-sans);
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:focus {
+      background: rgba(255, 255, 255, 0.05);
+      border-color: var(--accent-purple);
+      box-shadow: 0 0 15px rgba(139, 92, 246, 0.2);
+      outline: none;
+    }
+  }
+
+  textarea {
+    min-height: 150px;
+    resize: vertical;
+  }
+
+  .flat-button {
+    color: var(--accent-purple);
+    font-family: var(--font-display);
+    font-weight: 500;
+    font-size: 13px;
+    letter-spacing: 3px;
+    text-decoration: none;
+    padding: 12px 24px;
+    border: 1px solid var(--accent-purple);
+    border-radius: 6px;
+    background: transparent;
+    text-transform: uppercase;
+    float: right;
+    cursor: pointer;
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+
+    &:hover {
+      background: var(--accent-purple);
+      color: var(--bg-main);
+      box-shadow: 0 0 20px rgba(139, 92, 246, 0.4);
+      transform: translateY(-2px);
+    }
+  }
+}
+
+.map-wrap {
+  border-left: 1px solid var(--border-surface);
+  float: right;
+  width: 45%;
+  height: 115vh;
+  margin-top: -3%;
+  position: relative;
+  overflow: hidden;
+  opacity: .9;
+  animation: fadeIn 1s 1.2s;
+  animation-fill-mode: forwards;
+}
+
+.leaflet-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  animation: backInRight 1s 1.2s;
+  animation-fill-mode: forwards;
+  
+  // Custom dark filter for OpenStreetMap
+  filter: invert(90%) hue-rotate(190deg) brightness(85%) contrast(110%);
+
+  &::before {
+    content: "";
+    display: block;
+    position: absolute;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    background: rgba(3, 0, 20, 0.35);
+    z-index: 1000;
+    pointer-events: none;
+    opacity: 0.2;
+  }
+}
+
+.info-map {
+  position: absolute;
+  top: 10px;
+  right: 1%;
+  z-index: 9999;
+  opacity: 0;
+  animation: fadeIn 1s 1.5s forwards;
+
+  .contact-card {
+    width: 300px;
+    padding: 32px;
+    background: var(--glass-bg);
+    backdrop-filter: blur(var(--glass-blur));
+    -webkit-backdrop-filter: blur(var(--glass-blur));
+    border: 1px solid var(--border-subtle);
+
+    border-radius: 24px;
+
+    box-shadow: var(--shadow-md);
+
+    transition: all 0.35s ease;
+
+    &:hover {
+      transform: translateY(-6px);
+      border-color: var(--border-focus);
+      box-shadow: var(--shadow-lg);
+    }
+
+    h3 {
+      margin: 0 0 20px;
+      color: var(--accent-purple);
+      font-size: 22px;
+      font-weight: 700;
+    }
+
+    p {
+      margin: 0;
+      opacity: 1;
+      animation: none;
+      color: var(--text-secondary);
+      line-height: 1.8;
+    }
+
+    span {
+      display: block;
+      margin-top: 14px;
+      color: var(--accent-cyan);
+      font-weight: 600;
+    }
+
+    .social-links {
+      display: flex;
+      gap: 14px;
+      margin-top: 24px;
+
+      a {
+        width: 50px;
+        height: 50px;
+
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        border-radius: 14px;
+
+        color: var(--text-primary);
+        font-size: 22px;
+
+        background: var(--bg-surface);
+        border: 1px solid var(--border-subtle);
+
+        transition: all 0.3s ease;
+
+        &:hover {
+          transform: translateY(-4px);
+          color: var(--accent-purple);
+
+          border-color: var(--accent-purple);
+
+          box-shadow:
+            0 0 20px rgba(139, 92, 246, 0.3);
+        }
+      }
+    }
+  }
+  
+}
+
+@media screen and (max-width: 1200px) {
+  .map-wrap {
+    float: none;
+    margin: 30px 10%;
+    width: 80%;
+    height: 350px;
+    border-left: none;
+    border: 1px solid var(--border-surface);
+    border-radius: 12px;
+  }
+
+  .info-map {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .contact-page {
+    .text-zone {
+      left: 12% !important;
+      top: 45%;
+      width: 80% !important;
+    }
+  }
+
+  .contact-form {
+    width: 100% !important;
+  }
+
+  .map-wrap {
+    display: none;
+  }
+}
+

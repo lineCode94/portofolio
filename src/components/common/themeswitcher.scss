@@ -1,0 +1,59 @@
+.theme-switcher {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: 50%;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  transition: all 0.3s var(--ease-out-expo);
+  overflow: hidden;
+
+  &:hover {
+    border-color: var(--accent-purple);
+    box-shadow: 0 4px 15px var(--glow-purple);
+    transform: translateY(-2px);
+  }
+}
+
+.theme-switcher__icon-wrapper {
+  position: relative;
+  width: 18px;
+  height: 18px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.theme-switcher__icon {
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.5s ease;
+  color: var(--text-primary);
+}
+
+/* Light Mode State -> Show Moon (Action to switch to dark) */
+.theme-switcher--light .theme-switcher__icon--sun {
+  transform: rotate(90deg) scale(0);
+  opacity: 0;
+}
+
+.theme-switcher--light .theme-switcher__icon--moon {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}
+
+/* Dark Mode State -> Show Sun (Action to switch to light) */
+.theme-switcher--dark .theme-switcher__icon--moon {
+  transform: rotate(-90deg) scale(0);
+  opacity: 0;
+}
+
+.theme-switcher--dark .theme-switcher__icon--sun {
+  transform: rotate(0deg) scale(1);
+  opacity: 1;
+}

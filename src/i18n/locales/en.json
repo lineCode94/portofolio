@@ -1,0 +1,77 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About",
+    "projects": "Projects",
+    "work": "Work",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Hi,",
+    "name": "I'm Mohamed Zakaria",
+    "title": "Web Developer.",
+    "subtitle": "Frontend Developer / React.js",
+    "cta": {
+      "touch": "Get In Touch",
+      "work": "View Work",
+      "cv": "Download CV"
+    }
+  },
+  "about": {
+    "title": "About Me",
+    "eyebrow": "Introduction"
+  },
+  "projects": {
+    "title": "Featured Work",
+    "subtitle": "Premium digital products created for recruiters and high-end clients.",
+    "description": "A curated portfolio of production-ready platforms, enterprise experiences, and SaaS-ready interfaces designed for modern hiring teams.",
+    "list": {
+      "jobsai": {
+        "title": "Jobs AI",
+        "type": "AI Job Platform",
+        "category": "Product Design",
+        "description": "An AI-powered job platform that helps users discover opportunities, browse jobs, and improve their hiring experience."
+      },
+      "onestep": {
+        "title": "One Step",
+        "type": "Business Platform",
+        "category": "Scalable Architecture",
+        "description": "A modern business platform developed for Saudi Arabia with professional UI/UX and scalable architecture."
+      },
+      "mohm": {
+        "title": "Mohm",
+        "type": "Healthcare Platform",
+        "category": "Patient Experience",
+        "description": "A healthcare platform where clinics and patients can register, manage profiles, access offers, and use medical coupons."
+      },
+      "ikseb": {
+        "title": "Ikseb Sell",
+        "type": "E-Commerce Platform",
+        "category": "Retail Experience",
+        "description": "A complete e-commerce solution including product management, shopping experience, and online sales workflows."
+      },
+      "health": {
+        "title": "One Health Network",
+        "type": "Healthcare Network Platform",
+        "category": "Ecosystem Design",
+        "description": "A healthcare ecosystem connecting providers and users through a centralized medical services platform."
+      },
+      "reef": {
+        "title": "El Reef El Masry Automation",
+        "type": "Business Automation System",
+        "category": "Operational Excellence",
+        "description": "A custom business automation system developed for El Reef El Masry company to streamline workflows, operations, and internal processes."
+      }
+    }
+  },
+  "experience": {
+    "title": "Professional Experience",
+    "eyebrow": "Work / Experience"
+  },
+  "contact": {
+    "title": "Get In Touch",
+    "eyebrow": "Contact"
+  },
+  "theme": "Theme",
+  "language": "Language"
+}

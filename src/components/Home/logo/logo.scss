@@ -1,0 +1,195 @@
+/* ==========================================================================
+   Logo — Premium Handwritten Monogram
+   ========================================================================== */
+
+.logo-container {
+  position: absolute;
+  top: 48%;
+  right: 7%;
+  transform: translateY(-50%);
+  width: 420px;
+  height: 450px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 2;
+  overflow: visible;
+  transition: all 1.2s var(--ease-out-expo);
+}
+
+.logo-container::before {
+  content: "";
+  position: absolute;
+  inset: -14%;
+  background: radial-gradient(circle at 20% 20%, rgba(124, 58, 237, 0.14), transparent 24%),
+    radial-gradient(circle at 80% 25%, rgba(6, 182, 212, 0.12), transparent 18%);
+  opacity: 0.9;
+  pointer-events: none;
+  filter: blur(18px);
+}
+
+.logo-grid {
+  position: absolute;
+  inset: -40px;
+  background-image: radial-gradient(circle, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+  background-size: 28px 28px;
+  opacity: 0.22;
+  mask-image: radial-gradient(ellipse at center, black 28%, transparent 78%);
+  -webkit-mask-image: radial-gradient(ellipse at center, black 28%, transparent 78%);
+}
+
+.logo-orb {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(58px);
+  opacity: 0.08;
+  pointer-events: none;
+}
+
+.logo-orb--purple {
+  width: 190px;
+  height: 190px;
+  background: rgba(124, 58, 237, 0.55);
+  top: 10%;
+  left: 8%;
+  animation: orbPulse 6s 4s ease-in-out infinite alternate;
+}
+
+.logo-orb--cyan {
+  width: 180px;
+  height: 180px;
+  background: rgba(6, 182, 212, 0.45);
+  bottom: 10%;
+  right: 6%;
+  animation: orbPulse 7s 4.5s ease-in-out infinite alternate;
+}
+
+@keyframes orbPulse {
+  0% {
+    opacity: 0.08;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0.14;
+    transform: scale(1.12);
+  }
+}
+
+.logo-svg {
+  width: 100%;
+  height: auto;
+  overflow: visible;
+  position: relative;
+  z-index: 2;
+}
+
+.draw-path {
+  opacity: 0.96;
+  filter: drop-shadow(0 0 16px rgba(124, 58, 237, 0.24))
+          drop-shadow(0 0 30px rgba(6, 182, 212, 0.14));
+
+  &--m {
+    animation: drawStroke 1.9s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    animation-delay: 0.7s;
+  }
+
+  &--z {
+    animation: drawStroke 1.7s cubic-bezier(0.65, 0, 0.35, 1) forwards;
+    animation-delay: 2.3s;
+  }
+}
+
+@keyframes drawStroke {
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+.logo-container--glowing,
+.logo-container--idle {
+  .draw-path {
+    opacity: 1;
+    transition: opacity 1s ease, filter 1.2s ease;
+  }
+}
+
+.logo-container--idle {
+  animation: logoFloat 8.5s ease-in-out infinite;
+
+  .draw-path {
+    animation: glowBreathing 4.5s ease-in-out infinite alternate;
+  }
+}
+
+@keyframes logoFloat {
+  0%, 100% {
+    transform: translateY(-50%) scale(1);
+  }
+  50% {
+    transform: translateY(calc(-50% - 15px)) scale(1.02);
+  }
+}
+
+@keyframes glowBreathing {
+  0% {
+    filter: drop-shadow(0 0 15px rgba(124, 58, 237, 0.4))
+            drop-shadow(0 0 25px rgba(6, 182, 212, 0.25));
+  }
+  100% {
+    filter: drop-shadow(0 0 25px rgba(124, 58, 237, 0.65))
+            drop-shadow(0 0 45px rgba(6, 182, 212, 0.45));
+  }
+}
+
+.sparkles {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 3;
+}
+
+.sparkle {
+  position: absolute;
+  width: 4px;
+  height: 4px;
+  background: #fff;
+  border-radius: 50%;
+  opacity: 0;
+  animation: sparkleAnim 2.2s ease-in-out infinite;
+
+  &--1 { top: 12%; left: 24%; animation-delay: 4.2s; }
+  &--2 { top: 28%; right: 19%; animation-delay: 4.6s; }
+  &--3 { bottom: 34%; left: 33%; animation-delay: 4.9s; }
+  &--4 { top: 18%; right: 32%; animation-delay: 5.1s; }
+  &--5 { bottom: 22%; right: 24%; animation-delay: 5.4s; }
+  &--6 { top: 42%; left: 14%; animation-delay: 5.8s; }
+}
+
+@keyframes sparkleAnim {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.8;
+    transform: scale(1);
+    box-shadow: 0 0 8px 3px rgba(255, 255, 255, 0.45);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0);
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  .logo-container {
+    width: 340px;
+    right: 4%;
+  }
+}
+
+@media screen and (max-width: 767px) {
+  .logo-container {
+    display: none;
+  }
+}
