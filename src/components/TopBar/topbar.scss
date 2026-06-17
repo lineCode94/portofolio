@@ -9,7 +9,7 @@
   -webkit-backdrop-filter: blur(24px);
   border-bottom: 1px solid var(--border-surface);
   z-index: 1000;
-  transition: background 0.4s ease, border-color 0.4s ease;
+  transition: all 0.4s ease;
   box-shadow: var(--shadow-sm);
 }
 
@@ -24,7 +24,9 @@
   z-index: 1001;
 }
 
-/* Logo */
+/* =========================
+   LOGO
+========================= */
 .topbar__logo {
   display: flex;
   align-items: center;
@@ -51,7 +53,9 @@
   height: 28px;
 }
 
-/* Navigation Links */
+/* =========================
+   DESKTOP NAV
+========================= */
 .topbar__nav {
   display: flex;
   align-items: center;
@@ -81,7 +85,7 @@
     color: var(--text-primary);
   }
 
-  &--active {
+  &.active {
     color: var(--text-primary);
     background: var(--bg-surface-hover);
     box-shadow: var(--shadow-sm);
@@ -101,7 +105,9 @@
   }
 }
 
-/* Tools (Language + Theme) */
+/* =========================
+   TOOLS
+========================= */
 .topbar__tools {
   display: flex;
   align-items: center;
@@ -109,12 +115,134 @@
   flex-shrink: 0;
 }
 
-/* Mobile Responsiveness */
+/* =========================
+   MOBILE BUTTON
+========================= */
+.topbar__menu-btn {
+  display: none;
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  padding: 8px;
+  border-radius: 10px;
+  transition: all 0.25s ease;
+
+  &:hover {
+    background: var(--bg-surface-hover);
+    transform: scale(1.05);
+  }
+}
+
+/* =========================
+   OVERLAY
+========================= */
+.topbar__overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+  backdrop-filter: blur(6px);
+  opacity: 0;
+  visibility: hidden;
+  transition: 0.3s ease;
+  z-index: 1100;
+}
+
+.topbar__overlay.open {
+  opacity: 1;
+  visibility: visible;
+}
+
+/* =========================
+   MOBILE DRAWER (PREMIUM)
+========================= */
+.topbar__drawer {
+  position: fixed;
+  top: 0;
+  right: -320px;
+  width: 300px;
+  height: 100vh;
+  background: rgba(20, 20, 30, 0.92);
+  backdrop-filter: blur(18px);
+  border-left: 1px solid var(--border-subtle);
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.4);
+  padding: 24px;
+  transition: right 0.35s cubic-bezier(0.22, 1, 0.36, 1);
+  z-index: 1200;
+}
+
+.topbar__drawer.open {
+  right: 0;
+}
+
+/* Close button */
+.topbar__close {
+  background: transparent;
+  border: none;
+  color: var(--text-primary);
+  cursor: pointer;
+  margin-bottom: 24px;
+  padding: 8px;
+  border-radius: 10px;
+
+  &:hover {
+    background: var(--bg-surface-hover);
+  }
+}
+
+/* Mobile nav */
+.topbar__mobile-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.mobile-link {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 12px 14px;
+  border-radius: 12px;
+  color: var(--text-secondary);
+  text-decoration: none;
+  transition: all 0.25s ease;
+  font-weight: 500;
+
+  svg {
+    opacity: 0.8;
+  }
+
+  &:hover {
+    background: var(--bg-surface-hover);
+    color: var(--text-primary);
+    transform: translateX(4px);
+  }
+
+  &.active {
+    background: linear-gradient(
+      135deg,
+      var(--accent-purple),
+      var(--accent-cyan)
+    );
+    color: white;
+    box-shadow: 0 0 18px rgba(124, 58, 237, 0.4);
+  }
+}
+
+/* =========================
+   RESPONSIVE BREAKPOINT
+========================= */
 @media screen and (max-width: 900px) {
   .topbar__nav {
-    display: none; /* Hide topbar nav on mobile, maybe rely on a hamburger menu or bottom sidebar */
+    display: none;
   }
-  
+
+  .topbar__menu-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
   .topbar__container {
     padding: 0 20px;
   }
