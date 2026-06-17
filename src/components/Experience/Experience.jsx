@@ -52,11 +52,12 @@ const Experience = () => {
               Built scalable healthcare and marketing platforms using React ecosystem,
               focusing on performance, UX, and scalable architecture.
             </p>
-            <p className="desc">
-              Developed multiple production-grade systems including a healthcare web app,
-              a marketing website, and an AI recruitment platform with strong emphasis on
-              performance optimization, reusable components, and secure authentication.
-            </p>
+       <p className="desc">
+  Built scalable healthcare & marketing platforms using React with focus on performance and UX.
+</p>
+<p className="desc">
+  Delivered production systems including healthcare app, marketing site, and AI recruitment platform.
+</p>
             <div className="tags">
               <span>React</span>
               <span>Next.js</span>
