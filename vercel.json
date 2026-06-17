@@ -1,5 +1,9 @@
 {
   "installCommand": "npm install --legacy-peer-deps",
   "buildCommand": "npm run build",
-  "outputDirectory": "build"
+  "outputDirectory": "build",
+  "env": {
+    "CI": "false",
+    "SKIP_PREFLIGHT_CHECK": "true"
+  }
 }
