@@ -67,13 +67,12 @@ delete L.Icon.Default.prototype._getIconUrl;
     <>
       <div className="container contact-page">
         <div className="text-zone">
-          <h1>
-            <Animated
-              strArray={["C", "o", "n", "t", "a", "c", "t", " ", "m", "e"]}
-              idx={15}
-              letterClass={letterClass}
-            />
-          </h1>
+          <div className="contact-heading">
+            <div className="contact-heading__copy">
+              <p className="contact-heading__eyebrow">GET IN TOUCH</p>
+              <h1>Contact Me</h1>
+            </div>
+          </div>
 
           <p>
             I am interested in freelance opportunities - especially on ambitious

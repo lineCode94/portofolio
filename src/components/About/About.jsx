@@ -56,21 +56,14 @@ const About = () => {
   return (
     <>
       <div className="page contanier about-page">
-        <motion.div 
-          className="text-zone"
-          variants={containerVariants}
-          initial="hidden"
-          whileInView="visible"
-          viewport={{ once: true, amount: 0.2 }}
-        >
-          <motion.h1 variants={itemVariants}>
-            <Animated
-              letterClass={letterClass}
-              strArray={["A", "b", "o", "u", "t", " ", "m", "e"]}
-              idx={15}
-            />
-          </motion.h1>
-          <motion.p variants={itemVariants}>
+        <div className="text-zone">
+          <div className="about-heading">
+            <div className="about-heading__copy">
+              <p className="about-heading__eyebrow">DISCOVER</p>
+              <h1>About Me</h1>
+            </div>
+          </div>
+          <p>
             Senior Frontend Developer with over 7 years of experience building
             scalable and high-performance web applications using modern
             technologies such as React, Next.js, JavaScript (ES6+), TypeScript,
@@ -82,29 +75,27 @@ const About = () => {
             Strong ability to translate business requirements into efficient and
             reusable frontend solutions while continuously adopting modern tools
             and best practices.
-          </motion.p>
+          </p>
 
-          <motion.p variants={itemVariants}>
+          <p>
             Proficient: React.js, Next.js, ES6, Tailwind, Shadcn/ui, Sass,
             HTML5, CSS3.<br /> Familiar: TypeScript, Node.js,
             Express, Redux, C#, ASP.NET Core MVC.
-          </motion.p>
+          </p>
 
-          <motion.div className="skills-container" variants={itemVariants}>
+          <div className="skills-container">
             {skills.map((skill, index) => (
-              <motion.div 
+              <div 
                 key={index} 
                 className="skill-badge"
-                whileHover={{ scale: 1.05, y: -2 }}
-                whileTap={{ scale: 0.95 }}
               >
                 {skill.icon && <FontAwesomeIcon icon={skill.icon} style={{ color: skill.color }} />}
                 {skill.componentIcon && <skill.componentIcon style={{ color: skill.color, fontSize: "18px" }} />}
                 <span>{skill.name}</span>
-              </motion.div>
+              </div>
             ))}
-          </motion.div>
-        </motion.div>
+          </div>
+        </div>
         
         <div className="stage-cube-cont">
           <div className="cubespinner">

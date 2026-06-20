@@ -70,26 +70,26 @@
     max-width: 780px;
     text-transform: none;
 
-    &::before {
-      content: "<h1>";
-      font-family: "La Belle Aurore", cursive;
-      color: var(--accent-cyan);
-      font-size: 16px;
-      position: absolute;
-      top: -38px;
-      left: 0;
-    }
+    // &::before {
+    //   content: "<h1>";
+    //   font-family: "La Belle Aurore", cursive;
+    //   color: var(--accent-cyan);
+    //   font-size: 16px;
+    //   position: absolute;
+    //   top: -38px;
+    //   left: 0;
+    // }
 
-    &::after {
-      content: "<h1/>";
-      font-family: "La Belle Aurore", cursive;
-      color: var(--accent-cyan);
-      font-size: 16px;
-      position: absolute;
-      left: 0;
-      bottom: -36px;
-      animation: fadeIn 1s 0.6s backwards;
-    }
+    // &::after {
+    //   content: "<h1/>";
+    //   font-family: "La Belle Aurore", cursive;
+    //   color: var(--accent-cyan);
+    //   font-size: 16px;
+    //   position: absolute;
+    //   left: 0;
+    //   bottom: -36px;
+    //   animation: fadeIn 1s 0.6s backwards;
+    // }
   }
 
   h2 {

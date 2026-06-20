@@ -14,39 +14,38 @@
     }
   }
 
-  h1 {
-    font-size: 53px;
-    font-family: var(--font-display);
-    color: var(--text-primary);
-    font-weight: 700;
-    margin-top: 0;
-    position: relative;
-    margin-bottom: 40px;
-    left: -10px;
-    letter-spacing: -1px;
+  .contact-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    opacity: 0;
+    animation: fadeInUp 1s forwards;
 
-    &:before {
-      content: "<h1>";
-      font-family: "La Belle Aurore", cursive;
-   color:var(--text-muted);
-   
-      font-size: 16px;
-      position: absolute;
-      margin-top: -15px;
-      left: -10px;
-      line-height: 16px;
+    &__copy {
+      display: grid;
+      gap: 0.5rem;
     }
 
-    &:after {
-      content: "<h1/>";
-      font-family: "La Belle Aurore", cursive;
-      color: var(--text-muted);
-      font-size: 16px;
-      line-height: 16px;
-      position: absolute;
-      left: -30px;
-      bottom: -22px;
-      margin-left: 20px;
+    &__eyebrow {
+      font-family: var(--font-display);
+      color: var(--accent-cyan);
+      letter-spacing: 0.28em;
+      text-transform: uppercase;
+      font-size: 0.72rem;
+      font-weight: 700;
+      margin: 0;
+    }
+
+    h1 {
+      margin: 0;
+      font-size: clamp(2.2rem, 4vw, 3rem);
+      color: var(--text-primary);
+      font-family: var(--font-display);
+      letter-spacing: -0.04em;
+      font-weight: 800;
     }
   }
 
@@ -273,7 +272,6 @@
       }
     }
   }
-  
 }
 
 @media screen and (max-width: 1200px) {
@@ -309,4 +307,3 @@
     display: none;
   }
 }
-

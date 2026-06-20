@@ -4,7 +4,6 @@ import TopBar from "../TopBar/TopBar";
 import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
-
 const Layout = () => {
   return (
     <div className="App">

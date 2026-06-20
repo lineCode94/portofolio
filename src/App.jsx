@@ -10,6 +10,7 @@ import Projects from "./components/Projects/Projects.jsx";
 import Experience from "./components/Experience/Experience.jsx";
 import PremiumLoader from "./components/loader/PremiumLoader.jsx";
 import Cursor from "./components/common/Cursor.jsx";
+import SpaceBackground from "./components/common/SpaceBackground.jsx";
 import "leaflet/dist/leaflet.css";
 
 function App() {
@@ -19,6 +20,7 @@ function App() {
   return (
     <>
       <Cursor />
+      <SpaceBackground />
       {/* 1. Handle loading screen logic cleanly without interfering with router internals */}
       <AnimatePresence mode="wait">
         {loadingPhase && (

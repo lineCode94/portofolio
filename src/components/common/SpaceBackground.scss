@@ -1,0 +1,14 @@
+.space-background {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0; /* Render above the body background glow but behind app content */
+  pointer-events: none; /* No interaction, click through */
+  background: transparent;
+}
+
+[data-theme="light"] .space-background {
+  display: none !important;
+}

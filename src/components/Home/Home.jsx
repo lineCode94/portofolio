@@ -83,11 +83,6 @@ const Home = () => {
   return (
     <>
       <div className="container home-page page">
-        <div className="particles-container" aria-hidden="true">
-          {[...Array(15)].map((_, i) => (
-            <div key={i} className={`hero-particle hero-particle--${i + 1}`} />
-          ))}
-        </div>
         {showTextZone && (
           <div className="text-zone">
             <h1>
