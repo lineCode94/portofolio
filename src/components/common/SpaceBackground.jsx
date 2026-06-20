@@ -15,17 +15,28 @@ const SpaceBackground = () => {
     // Reduce particle count on mobile for performance
     const particleCount = window.innerWidth < 768 ? 60 : 150;
     
-    const resizeCanvas = () => {
-      canvas.width = window.innerWidth;
-      canvas.height = window.innerHeight;
+    let width = 0;
+    let height = 0;
+
+    const resizeCanvas = (force = false) => {
+      // Only resize if width or significant height changed (prevents mobile address bar resize issues)
+      if (!force && Math.abs(window.innerHeight - height) < 100 && window.innerWidth === width) return;
+      
+      width = window.innerWidth;
+      height = window.innerHeight;
+      
+      const dpr = window.devicePixelRatio || 1;
+      canvas.width = width * dpr;
+      canvas.height = height * dpr;
+      ctx.scale(dpr, dpr);
     };
     
     const initParticles = () => {
       particles = [];
       for (let i = 0; i < particleCount; i++) {
         particles.push({
-          x: Math.random() * canvas.width,
-          y: Math.random() * canvas.height,
+          x: Math.random() * window.innerWidth,
+          y: Math.random() * window.innerHeight,
           radius: Math.random() * 1.5 + 0.5,
           vx: (Math.random() - 0.5) * 0.15, // very slow floating
           vy: (Math.random() - 0.5) * 0.15,
@@ -36,7 +47,7 @@ const SpaceBackground = () => {
     };
     
     const drawParticles = () => {
-      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      ctx.clearRect(0, 0, width, height);
       
       const isLightMode = document.documentElement.getAttribute('data-theme') === 'light';
       
@@ -57,10 +68,10 @@ const SpaceBackground = () => {
         }
         
         // Wrap around edges to keep continuous flow
-        if (p.x < 0) p.x = canvas.width;
-        if (p.x > canvas.width) p.x = 0;
-        if (p.y < 0) p.y = canvas.height;
-        if (p.y > canvas.height) p.y = 0;
+        if (p.x < 0) p.x = width;
+        if (p.x > width) p.x = 0;
+        if (p.y < 0) p.y = height;
+        if (p.y > height) p.y = 0;
         
         ctx.beginPath();
         ctx.arc(p.x, p.y, p.radius, 0, Math.PI * 2);
@@ -76,10 +87,10 @@ const SpaceBackground = () => {
       animationFrameId = requestAnimationFrame(drawParticles);
     };
     
-    window.addEventListener('resize', resizeCanvas);
+    window.addEventListener('resize', () => resizeCanvas(false));
     
     // Initial setup
-    resizeCanvas();
+    resizeCanvas(true);
     initParticles();
     drawParticles();
     
