@@ -203,9 +203,8 @@
     display: flex;
     flex-direction: column;
     padding: 80px 5% 40px; /* Proper padding, clearing navbar if any */
-    overflow-y: auto;
-    overflow-x: hidden;
-    height: 100vh;
+  
+    min-height: 100vh;
     box-sizing: border-box;
 
     .text-zone {

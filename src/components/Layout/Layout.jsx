@@ -1,7 +1,7 @@
 import "./layout.scss";
 import React from "react";
-// import Sidebar from "../sidebar/Sidebar";
 import TopBar from "../TopBar/TopBar";
+import Footer from "../Footer/Footer";
 import { Outlet } from "react-router-dom";
 import { motion } from "framer-motion";
 
@@ -9,7 +9,6 @@ const Layout = () => {
   return (
     <div className="App">
       <TopBar />
-      {/* <Sidebar /> */}
       <main className="main-content">
         <motion.div
           initial={{ opacity: 0, y: 12 }}
@@ -20,6 +19,7 @@ const Layout = () => {
           <Outlet />
         </motion.div>
       </main>
+      {/* <Footer /> */}
     </div>
   );
 };
